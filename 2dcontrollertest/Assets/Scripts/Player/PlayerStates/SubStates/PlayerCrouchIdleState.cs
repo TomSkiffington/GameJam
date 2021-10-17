@@ -14,8 +14,6 @@ public class PlayerCrouchIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        
-        player.InputHandler.UseDash();
 
         player.SetColliderHeight(playerData.crouchColliderHeight);
         

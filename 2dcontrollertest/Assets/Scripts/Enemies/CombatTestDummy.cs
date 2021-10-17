@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SpriteHitFlash;
 
-public class CombatTestDummy : MonoBehaviour, IDamageable
+public class CombatTestDummy : MonoBehaviour
 {
 
     [SerializeField] private GameObject hitParticles;

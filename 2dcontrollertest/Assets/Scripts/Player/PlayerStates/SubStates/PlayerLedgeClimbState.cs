@@ -60,8 +60,6 @@ public class PlayerLedgeClimbState : PlayerState
             player.transform.position = stopPosition;
             isClimbing = false;
         }
-
-        player.InputHandler.UseDash();
     }
 
     public override void LogicUpdate()

@@ -42,16 +42,6 @@ public class PlayerRunState : PlayerGroundedState
         if(xInput == 0) {
             stateMachine.ChangeState(player.IdleState);
         }
-        else if(dashInputRight && isGrounded && !isDashing) {
-            player.DashState.SetDashDirection(1);
-            stateMachine.ChangeState(player.DashState);
-            velocityX = 0;
-        }
-        else if(dashInputLeft && isGrounded && !isDashing) {
-            player.DashState.SetDashDirection(-1);
-            stateMachine.ChangeState(player.DashState);
-            velocityX = 0;
-        }
         else if (yInput == -1) {
             stateMachine.ChangeState(player.CrouchWalkState);
         } 

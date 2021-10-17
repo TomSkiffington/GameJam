@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public PlayerStateMachine StateMachine { get; private set; }
 
     public PlayerIdleState IdleState { get; private set; }
-    public PlayerDashState DashState { get; private set; }
     public PlayerRunState RunState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
     public PlayerJumpSquatState JumpSquatState { get; private set; }
@@ -35,8 +34,6 @@ public class Player : MonoBehaviour
     public PlayerCrouchIdleState CrouchIdleState { get; private set; }
     public PlayerCrouchWalkState CrouchWalkState { get; private set; }
     public PlayerAirDodgeState AirDodgeState { get; private set; }
-    public PlayerAttackState PrimaryAttackState { get; private set; }
-    public PlayerAttackState SecondaryAttackState { get; private set; }
 
     [SerializeField]
     private PlayerData playerData;
@@ -62,7 +59,6 @@ public class Player : MonoBehaviour
         StateMachine = new PlayerStateMachine();
 
         IdleState = new PlayerIdleState (this, StateMachine, playerData, "idle");
-        DashState = new PlayerDashState (this, StateMachine, playerData, "dash");
         RunState = new PlayerRunState (this, StateMachine, playerData, "run");
         JumpState = new PlayerJumpState (this, StateMachine, playerData, "inAir");
         JumpSquatState = new PlayerJumpSquatState (this, StateMachine, playerData, "inJumpSquat");
@@ -77,8 +73,6 @@ public class Player : MonoBehaviour
         CrouchIdleState = new PlayerCrouchIdleState (this, StateMachine, playerData, "crouchIdle");
         CrouchWalkState = new PlayerCrouchWalkState (this, StateMachine, playerData, "crouchWalk");
         AirDodgeState = new PlayerAirDodgeState (this, StateMachine, playerData, "airDodge");
-        PrimaryAttackState = new PlayerAttackState (this, StateMachine, playerData, "attack");
-        SecondaryAttackState = new PlayerAttackState (this, StateMachine, playerData, "attack");
     }
 
     private void Start() {
@@ -87,23 +81,12 @@ public class Player : MonoBehaviour
         controller = GetComponent<Controller2D>();
         MovementCollider = GetComponent<BoxCollider2D>();
 
-        PrimaryAttackState.SetWeapon(EquippedWeapon);   //weapon in equipment slot 1
-
-        //SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
-
         StateMachine.Initialize(IdleState);
     }
 
     private void Update() {
         Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();
-
-        if (InputHandler.ShowInventory) {
-            InventoryCanvas.SetActive(true);
-        }
-        else {
-            InventoryCanvas.SetActive(false);
-        }
     }
 
     private void FixedUpdate() {
@@ -139,42 +122,6 @@ public class Player : MonoBehaviour
         dustRenderer.material = wavedashDust;
 
         dust.Play();
-    }
-
-    #endregion
-
-    #region Inventory and Items
-
-    public SO_Inventory playerInventory;
-    public SO_Inventory playerEquipment;
-    public Weapon EquippedWeapon;
-    [SerializeField] public GameObject InventoryCanvas;
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        var groundItem = other.GetComponent<GroundItem>();
-
-        if (groundItem) {
-
-            Item _item;
-
-            //no mods or unrolled mods (mod value = 0)
-            if (groundItem.mods.Length == 0 || groundItem.mods[0].value == 0) {
-                _item = new Item(groundItem.item);
-            }
-            //mods already rolled
-            else {
-                _item = new Item(groundItem.item, groundItem.mods);
-            }   
-            
-            if (playerInventory.AddItem(_item, groundItem.stackSize)) {    //only destroys the ground item if it's able to add to inventory
-                Destroy(other.gameObject);
-            }
-        }
-    }
-
-    private void OnApplicationQuit() {
-        playerInventory.Container.Clear();
-        playerEquipment.Container.Clear();
     }
 
     #endregion
