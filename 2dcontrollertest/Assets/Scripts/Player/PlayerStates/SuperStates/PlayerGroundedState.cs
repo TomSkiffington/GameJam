@@ -9,19 +9,17 @@ public class PlayerGroundedState : PlayerState
     protected Vector2 rawMoveInput;
     protected int xInput;
     protected int yInput;
-    protected bool dashInputLeft;
-    protected bool dashInputRight;
     protected bool walkInput;
     protected bool walkInputStopHold;
     protected bool jumpInput;
 
     // Checks
     protected bool isGrounded;
-    protected bool isDashing;
     private bool isTouchingWall;
     private bool wallGrabInput;
     private bool isTouchingLedge;
     protected bool isTouchingCeiling;
+    protected bool brokenLegs = true;  //cant walk
     
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName) {
     }

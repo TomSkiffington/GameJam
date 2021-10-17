@@ -48,7 +48,7 @@ public class PlayerSpecialLandState : PlayerGroundedState
         base.LogicUpdate();
         if (isExitingState) return;
 
-        if (xInput != 0 && Time.time >= startTime + landTime) {
+        if (xInput != 0 && Time.time >= startTime + landTime && !brokenLegs) {
             //player.CheckIfShouldFlip();
             //core.Movement.SetVelocityZero();
             stateMachine.ChangeState(player.RunState);

@@ -25,7 +25,7 @@ public class PlayerIdleState : PlayerGroundedState
 
         if (isExitingState) return;
 
-        if (xInput != 0 && isGrounded && !isDashing) {
+        if (xInput != 0 && isGrounded && !brokenLegs) {
             stateMachine.ChangeState(player.RunState);
         }
         else if (yInput == -1) {

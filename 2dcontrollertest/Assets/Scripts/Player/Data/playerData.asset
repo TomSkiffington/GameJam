@@ -40,7 +40,7 @@ MonoBehaviour:
   gravity: 1.1
   airDodgeTime: 0.35
   airDodgeSpeed: 2
-  airDodgeDistanceModifier: 1
+  airDodgeDistanceModifier: 0.94
   wallSlideVelocity: 3
   wallClimbVelocity: 3
   startOffset: {x: 0.37, y: 0.95}

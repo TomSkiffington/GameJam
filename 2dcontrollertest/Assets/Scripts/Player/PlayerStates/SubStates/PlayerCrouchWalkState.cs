@@ -42,7 +42,7 @@ public class PlayerCrouchWalkState : PlayerGroundedState
         if(xInput == 0) {
             stateMachine.ChangeState(player.CrouchIdleState);
         }
-        else if (yInput != -1 && !isTouchingCeiling) {
+        else if (yInput != -1 && !isTouchingCeiling && !brokenLegs) {
             stateMachine.ChangeState(player.RunState);
         }
     }

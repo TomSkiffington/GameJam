@@ -88,7 +88,7 @@ public class PlayerInAirState : PlayerState
             stateMachine.ChangeState(player.LandState);
         }
         else if (isTouchingWall && !isTouchingLedge && !isGrounded) {
-            stateMachine.ChangeState(player.LedgeClimbState);
+            //stateMachine.ChangeState(player.LedgeClimbState);
         }
         else if (airDodgeInput && player.AirDodgeState.CheckIfCanAirDodge()) {
             stateMachine.ChangeState(player.AirDodgeState);
@@ -108,10 +108,10 @@ public class PlayerInAirState : PlayerState
             stateMachine.ChangeState(player.JumpState);
         }
         else if (wallGrabInput && isTouchingWall && xInput == core.Movement.FacingDirection && isTouchingLedge) {
-            stateMachine.ChangeState(player.WallGrabState);
+            //stateMachine.ChangeState(player.WallGrabState);
         }
         else if (isTouchingWall && xInput == core.Movement.FacingDirection && core.Movement.CurrentVelocity.y <= 0) {
-            stateMachine.ChangeState(player.WallSlideState);
+            //stateMachine.ChangeState(player.WallSlideState);
         }
         else if (yInput == -1 && core.Movement.CurrentVelocity.y < 0 && !fastFalled) {
             core.Movement.SetVelocityY(-playerData.fastFallV);

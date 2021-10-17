@@ -26,7 +26,7 @@ public class PlayerLandState : PlayerGroundedState
         base.LogicUpdate();
         if (isExitingState) return;
 
-        if (xInput != 0) {
+        if (xInput != 0 && !brokenLegs) {
             stateMachine.ChangeState(player.RunState);
         }
         else if (yInput == -1) {
