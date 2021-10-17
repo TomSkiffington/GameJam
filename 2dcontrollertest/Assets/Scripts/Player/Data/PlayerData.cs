@@ -8,7 +8,7 @@ public class PlayerData : ScriptableObject
     [Header("Move State")]
     public float runSpeed = 12f;
     public float walkSpeed = 6f;
-    public float traction = .08f;
+    public float traction = .02f;
     public float turnAroundMomentumModifier = .8f;
 
     public float iniDashSpeed = 12f;

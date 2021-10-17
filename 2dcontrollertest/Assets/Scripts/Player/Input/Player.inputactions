@@ -216,7 +216,7 @@
                 {
                     "name": "",
                     "id": "f4872052-6a13-4984-9aa3-5efa2e6ac72d",
-                    "path": "<Keyboard>/leftShift",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",

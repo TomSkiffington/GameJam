@@ -7,6 +7,12 @@ public class PlayerSpecialLandState : PlayerGroundedState
     private float velocityX;
     private float landTime = 0.16667f;
 
+   
+
+    private bool isCancelled = true;
+
+
+
     public PlayerSpecialLandState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -14,16 +20,26 @@ public class PlayerSpecialLandState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-
+        
         //player.InputHandler.UseDash();
-
+        isCancelled = true;
         player.CreateWaveDashDust();
-
         velocityX = core.Movement.CurrentVelocity.x;
     }
 
     public override void Exit()
     {
+        if(isCancelled){
+            if(playerData.traction > 0){
+                playerData.traction = playerData.traction * -2f;
+            }
+            else if(playerData.traction >= -.6f){
+                playerData.traction = playerData.traction * 2f;
+            }
+            
+            
+        }
+
         base.Exit();
     }
 
@@ -36,9 +52,13 @@ public class PlayerSpecialLandState : PlayerGroundedState
             //player.CheckIfShouldFlip();
             //core.Movement.SetVelocityZero();
             stateMachine.ChangeState(player.RunState);
+           
         }
         else if (isAnimationFinished) {
+
             stateMachine.ChangeState(player.IdleState);
+            isCancelled = false;
+            playerData.traction = 0.2f;
         }
     }
 

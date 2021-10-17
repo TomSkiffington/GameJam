@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f1f7ff11c54d245b989be4ddc19b3c, type: 3}
   m_Name: playerData
   m_EditorClassIdentifier: 
-  runSpeed: 12
+  runSpeed: 6
   walkSpeed: 6
-  traction: 0.4
-  turnAroundMomentumModifier: 0.8
-  iniDashSpeed: 12
-  maxDashSpeed: 14
+  traction: 0.2
+  turnAroundMomentumModifier: 0
+  iniDashSpeed: 1
+  maxDashSpeed: 1
   iniDashTime: 0.12
   dAccA: 0.1
   dAccB: 0.5
@@ -27,12 +27,12 @@ MonoBehaviour:
   jumpSquatTime: 0.083333336
   fullHopIniV: 24
   shortHopIniV: 17
-  amountOfJumps: 2
+  amountOfJumps: 1
   wallJumpTime: 0.15
   wallJumpVelocity: 22
   wallJumpAngle: {x: 1, y: 2}
   aerialMaxVelX: 5
-  airFriction: 0.02
+  airFriction: 0.08
   airMobilityA: 0.15
   airMobilityB: 0.1
   coyoteTime: 0.2
@@ -40,7 +40,7 @@ MonoBehaviour:
   gravity: 1.1
   airDodgeTime: 0.35
   airDodgeSpeed: 2
-  airDodgeDistanceModifier: 0.9
+  airDodgeDistanceModifier: 1
   wallSlideVelocity: 3
   wallClimbVelocity: 3
   startOffset: {x: 0.37, y: 0.95}

@@ -14,7 +14,7 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 RawMovementInput { get; private set; }
     public Vector2 RawAirDodgeDirectionInput { get; private set; }
     public Vector2 RawPrimaryAttackDirectionInput { get; private set; }
-    public Vector2 AirDodgeDirectionInput { get; private set; }
+  //  public Vector2 AirDodgeDirectionInput { get; private set; }
 
     public Vector2 MousePosition { get; private set; }
 
@@ -104,10 +104,9 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnAirDodgeDirectionInput(InputAction.CallbackContext context) {
         RawAirDodgeDirectionInput = context.ReadValue<Vector2>();
 
-        if (playerInput.currentControlScheme == "Keyboard") {
-            MousePosition = cam.ScreenToWorldPoint(context.ReadValue<Vector2>());
-            RawAirDodgeDirectionInput = cam.ScreenToWorldPoint((Vector3)RawAirDodgeDirectionInput) - transform.position;
-        }
+        MousePosition = cam.ScreenToWorldPoint(context.ReadValue<Vector2>());
+        RawAirDodgeDirectionInput = cam.ScreenToWorldPoint((Vector3)RawAirDodgeDirectionInput) - transform.position;
+        
     }
 
     public void UseAirDodge() {
