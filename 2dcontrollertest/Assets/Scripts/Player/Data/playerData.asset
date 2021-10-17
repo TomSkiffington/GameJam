@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f1f7ff11c54d245b989be4ddc19b3c, type: 3}
+  m_Name: playerData
+  m_EditorClassIdentifier: 
+  runSpeed: 12
+  walkSpeed: 6
+  traction: 0.4
+  turnAroundMomentumModifier: 0.8
+  iniDashSpeed: 12
+  maxDashSpeed: 14
+  iniDashTime: 0.12
+  dAccA: 0.1
+  dAccB: 0.5
+  crouchWalkSpeed: 6
+  crouchColliderHeight: 0.8
+  standColliderHeight: 1.6
+  jumpSquatTime: 0.083333336
+  fullHopIniV: 24
+  shortHopIniV: 17
+  amountOfJumps: 2
+  wallJumpTime: 0.15
+  wallJumpVelocity: 22
+  wallJumpAngle: {x: 1, y: 2}
+  aerialMaxVelX: 5
+  airFriction: 0.02
+  airMobilityA: 0.15
+  airMobilityB: 0.1
+  coyoteTime: 0.2
+  fastFallV: 13
+  gravity: 1.1
+  airDodgeTime: 0.35
+  airDodgeSpeed: 2
+  airDodgeDistanceModifier: 0.9
+  wallSlideVelocity: 3
+  wallClimbVelocity: 3
+  startOffset: {x: 0.37, y: 0.95}
+  stopOffset: {x: 0.4, y: 1}
