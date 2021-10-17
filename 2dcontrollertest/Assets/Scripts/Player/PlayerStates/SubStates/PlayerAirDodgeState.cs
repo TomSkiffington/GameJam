@@ -66,7 +66,7 @@ public class PlayerAirDodgeState : PlayerAirborneAbilityState
         base.Exit();
 
         airDodged = false;
-        velocity = Vector2.zero;
+        //velocity = Vector2.zero;
     }
 
     public override void LogicUpdate()

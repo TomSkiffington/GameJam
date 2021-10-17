@@ -27,7 +27,7 @@ MonoBehaviour:
   jumpSquatTime: 0.083333336
   fullHopIniV: 24
   shortHopIniV: 17
-  amountOfJumps: 2
+  amountOfJumps: 1
   wallJumpTime: 0.15
   wallJumpVelocity: 22
   wallJumpAngle: {x: 1, y: 2}
@@ -40,7 +40,7 @@ MonoBehaviour:
   gravity: 1.1
   airDodgeTime: 0.35
   airDodgeSpeed: 2
-  airDodgeDistanceModifier: 0.9
+  airDodgeDistanceModifier: 0.94
   wallSlideVelocity: 3
   wallClimbVelocity: 3
   startOffset: {x: 0.37, y: 0.95}

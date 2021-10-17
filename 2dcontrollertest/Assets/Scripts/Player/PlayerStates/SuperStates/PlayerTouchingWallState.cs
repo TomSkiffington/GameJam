@@ -62,7 +62,7 @@ public class PlayerTouchingWallState : PlayerState
             stateMachine.ChangeState(player.InAirState);
         }
         else if (isTouchingLedgeMiddle && !isTouchingLedgeTop) {
-            stateMachine.ChangeState(player.LedgeClimbState);
+            //stateMachine.ChangeState(player.LedgeClimbState);
         }
     }
 }
