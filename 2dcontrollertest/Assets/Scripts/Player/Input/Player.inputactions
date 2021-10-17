@@ -6,22 +6,6 @@
             "id": "66bcde3d-83a8-4b22-9630-57b493dcc346",
             "actions": [
                 {
-                    "name": "DashLeft",
-                    "type": "Value",
-                    "id": "f25118f1-9836-4d0a-be41-8d057f479114",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "MultiTap(tapDelay=0.2,tapCount=1,pressPoint=0.01)"
-                },
-                {
-                    "name": "DashRight",
-                    "type": "Button",
-                    "id": "964b4563-ed85-4431-a8dd-d2f9f7d896ae",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "MultiTap(tapTime=0.2,tapDelay=0.2,tapCount=1)"
-                },
-                {
                     "name": "Movement",
                     "type": "Value",
                     "id": "9691d522-8cb4-4f6f-9718-9b4a54773dce",
@@ -65,38 +49,6 @@
                     "name": "Walk",
                     "type": "Button",
                     "id": "89ab8557-75ba-4c21-bce4-ce29d0002f18",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "PrimaryAttack",
-                    "type": "Button",
-                    "id": "aca0b0d4-e0ed-420a-b4e6-d5933e760469",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "SecondaryAttack",
-                    "type": "Button",
-                    "id": "4375a2ca-8515-4804-a839-61c8d70f122d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "PrimaryAttackDirection",
-                    "type": "Value",
-                    "id": "1e08d12e-fb8a-428f-9a89-0ba1b053de80",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "76343524-3615-437c-a65e-9273a3ad20a8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -237,28 +189,6 @@
                 },
                 {
                     "name": "",
-                    "id": "f44ac46e-ee25-4f9a-92fd-8028f2fd07af",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "DashLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "71e846de-a120-43df-9dc8-b0c470dae6f0",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "DashRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c51ac657-cbf2-4cf5-91ac-d2e02169e52a",
                     "path": "<Keyboard>/leftCtrl",
                     "interactions": "",
@@ -287,83 +217,6 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "AirDodgeDirection",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0bb271a4-14ac-40d7-b472-3f267556a6e7",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "PrimaryAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3431c441-e6a6-4bf7-a929-1343daf4a1d3",
-                    "path": "<HID::mayflash limited MAYFLASH GameCube Controller Adapter>/button2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "PrimaryAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "44af6aed-fe9c-46f5-986b-0bd514470c88",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "SecondaryAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2c8a5614-15c4-4bef-b0b8-320c8b35a587",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "PrimaryAttackDirection",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8348040b-cbb9-4174-a504-660639012fd0",
-                    "path": "<Joystick>/stick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "PrimaryAttackDirection",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3c56aecb-a40b-497f-ac52-881dcb9f2f09",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "25ae628f-2e47-4da4-a8dc-10494e18c59d",
-                    "path": "<HID::mayflash limited MAYFLASH GameCube Controller Adapter>/button13",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -84,7 +84,7 @@ public class PlayerAirDodgeState : PlayerAirborneAbilityState
         base.PhysicsUpdate();
         if (isExitingState) return;
 
-        if (Time.time >= startTime + playerData.airDodgeTime) {
+        if (Time.time >= startTime + playerData.airDodgeTime ) {
             core.Movement.airDrift(ref velocity.x, xInput);
             core.Movement.SetVelocityX(velocity.x);
 
