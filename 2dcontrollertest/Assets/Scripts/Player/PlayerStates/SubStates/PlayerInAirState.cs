@@ -84,13 +84,7 @@ public class PlayerInAirState : PlayerState
         wallGrabInput = player.InputHandler.WallGrabInput;
         airDodgeInput = player.InputHandler.AirDodgeInput;
 
-        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && player.playerEquipment.Container.Items[1].item.id != -1) {
-            stateMachine.ChangeState(player.PrimaryAttackState);
-        }
-        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary]) {
-            stateMachine.ChangeState(player.SecondaryAttackState);
-        }
-        else if (isGrounded && core.Movement.CurrentVelocity.y < 0.01f) {
+        if (isGrounded && core.Movement.CurrentVelocity.y < 0.01f) {
             stateMachine.ChangeState(player.LandState);
         }
         else if (isTouchingWall && !isTouchingLedge && !isGrounded) {

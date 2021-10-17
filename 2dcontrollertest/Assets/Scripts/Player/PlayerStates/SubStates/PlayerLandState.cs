@@ -11,8 +11,6 @@ public class PlayerLandState : PlayerGroundedState
 
     public override void Enter() {
         base.Enter();
-
-        player.InputHandler.UseDash();
         
         velocityX = core.Movement.CurrentVelocity.x;
 

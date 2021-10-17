@@ -25,8 +25,6 @@ public class PlayerJumpSquatState : PlayerGroundedAbilityState
     {
         base.Exit();
 
-        player.InputHandler.UseDash();
-
         inJumpSquat = false;
     }
 

@@ -15,9 +15,6 @@ public class PlayerGroundedState : PlayerState
     protected bool walkInputStopHold;
     protected bool jumpInput;
 
-    protected Vector2[] rawStickInputBuffer = new Vector2[3];
-    protected Queue<Vector2> rawStickInputOld = new Queue<Vector2>(2);
-
     // Checks
     protected bool isGrounded;
     protected bool isDashing;
@@ -36,8 +33,8 @@ public class PlayerGroundedState : PlayerState
         isGrounded = core.CollisionSenses.Grounded;
         isTouchingLedge = core.CollisionSenses.Ledge;
         isTouchingCeiling = core.CollisionSenses.Ceiling;
-        isDashing = player.InputHandler.Dashing;
     }
+    
     public override void Enter() {
         base.Enter();
 
@@ -56,21 +53,12 @@ public class PlayerGroundedState : PlayerState
         rawMoveInput = player.InputHandler.RawMovementInput;
         xInput = player.InputHandler.NormInputX;
         yInput = player.InputHandler.NormInputY;
-        dashInputLeft = player.InputHandler.DashInputLeft;
-        dashInputRight = player.InputHandler.DashInputRight;
         jumpInput = player.InputHandler.JumpInput;
         wallGrabInput = player.InputHandler.WallGrabInput;
         walkInput = player.InputHandler.WalkInput;
         walkInputStopHold = player.InputHandler.WalkInputStop;
 
-
-        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && player.playerEquipment.Container.Items[1].item.id != -1) {
-            stateMachine.ChangeState(player.PrimaryAttackState);
-        }
-        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary]) {
-            stateMachine.ChangeState(player.SecondaryAttackState);
-        }
-        else if (jumpInput && player.JumpState.CanJump() && !isTouchingCeiling) {
+        if (jumpInput && player.JumpState.CanJump() && !isTouchingCeiling) {
             stateMachine.ChangeState(player.JumpSquatState);
         }
         else if (!isGrounded) {
@@ -84,22 +72,5 @@ public class PlayerGroundedState : PlayerState
 
     public override void PhysicsUpdate() {
         base.PhysicsUpdate();
-
-        if (rawStickInputOld.Count == 3) {
-            rawStickInputOld.Dequeue();
-        }
-
-        while (rawMoveInput.x != 0 && rawStickInputOld.Count <= 2) {
-            rawStickInputOld.Enqueue(rawMoveInput);
-        }
-    }
-
-    protected Vector2[] GetPreviousFramesXStickValues() {
-        rawStickInputOld.CopyTo(rawStickInputBuffer, 0);
-
-        if (rawStickInputBuffer[0].x != 0) 
-        Debug.Log(rawStickInputBuffer[0].x + " " + rawStickInputBuffer[1].x + " " + rawStickInputBuffer[2].x);
-
-        return rawStickInputBuffer;
     }
 }
