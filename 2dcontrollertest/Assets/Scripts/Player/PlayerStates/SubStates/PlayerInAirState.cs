@@ -132,7 +132,7 @@ public class PlayerInAirState : PlayerState
     {
         base.PhysicsUpdate();
 
-        if (isTouchingWall) {
+        if (isTouchingWall || isTouchingWallBack) {
                 velocity.x = 0;
         }
             

@@ -154,6 +154,21 @@ public void PhysicsUpdate() {
         }
     }
 
+    public void CheckIfShouldFlipAirdodge(float airDodgeDirectionX) {
+        int airDodgeFaceDir;
+
+        if (airDodgeDirectionX >= 0) {
+            airDodgeFaceDir = 1;
+        }
+        else {
+            airDodgeFaceDir = -1;
+        }
+
+        if (airDodgeFaceDir != 0 && (airDodgeFaceDir != FacingDirection)) {
+            Flip();
+        }
+    }
+
     public void Flip() {
         
         if (FacingDirection > 0) {

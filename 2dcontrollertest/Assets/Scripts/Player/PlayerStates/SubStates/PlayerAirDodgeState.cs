@@ -23,28 +23,8 @@ public class PlayerAirDodgeState : PlayerAirborneAbilityState
         CanAirDodge = false;
         player.InputHandler.UseAirDodge();
 
-        // airDodgeDirection = Vector2.right * player.FacingDirection;
-
-        /* airDodgeDirectionInput = player.InputHandler.RawAirDodgeDirectionInput;
-
-        if (airDodgeDirectionInput != Vector2.zero && airDodged == false) {
-            if (airDodgeDirectionInput.x == -1 && airDodgeDirectionInput.y == 0) {
-                airDodgeDirection.Set(-5f, -1f);
-            }
-            else if (airDodgeDirectionInput.x == 1 && airDodgeDirectionInput.y == 0) {
-                airDodgeDirection.Set(5f, -1f);
-            }
-            else {
-                airDodgeDirection = airDodgeDirectionInput;
-            }
-            airDodgeDirection.Normalize();
-
-            player.ApplyVelocity(playerData.runSpeed * playerData.airDodgeSpeed * airDodgeDirection);
-            velocity = playerData.runSpeed * playerData.airDodgeSpeed * airDodgeDirection;
-            airDodged = true;
-        } */
-
         airDodgeDirectionInput = player.InputHandler.RawAirDodgeDirectionInput;
+        player.Core.Movement.CheckIfShouldFlipAirdodge(airDodgeDirectionInput.x);
 
         if (airDodgeDirectionInput != Vector2.zero && !airDodged) {
             

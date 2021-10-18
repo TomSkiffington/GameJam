@@ -16,6 +16,7 @@ public class PlayerGroundedState : PlayerState
     // Checks
     protected bool isGrounded;
     protected bool isTouchingWall;
+    protected bool isTouchingWallBack;
     private bool wallGrabInput;
     private bool isTouchingLedge;
     protected bool isTouchingCeiling;
@@ -28,6 +29,7 @@ public class PlayerGroundedState : PlayerState
         base.DoChecks();
 
         isTouchingWall = core.CollisionSenses.CheckIfTouchingWall();
+        isTouchingWallBack = core.CollisionSenses.CheckIfTouchingWallBack();
         isGrounded = core.CollisionSenses.Grounded;
         isTouchingLedge = core.CollisionSenses.Ledge;
         isTouchingCeiling = core.CollisionSenses.Ceiling;

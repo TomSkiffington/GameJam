@@ -15,7 +15,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter() {
         base.Enter();
 
-        if (isTouchingWall) {
+        if (isTouchingWall || isTouchingWallBack) {
                 velocityX = 0;
         }
         

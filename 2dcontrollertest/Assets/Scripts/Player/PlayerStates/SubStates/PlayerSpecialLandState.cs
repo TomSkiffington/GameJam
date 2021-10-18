@@ -58,7 +58,7 @@ public class PlayerSpecialLandState : PlayerGroundedState
     {
         base.PhysicsUpdate();
 
-        if (isTouchingWall) {
+        if (isTouchingWall || isTouchingWallBack) {
                 velocityX = 0;
         }
 
