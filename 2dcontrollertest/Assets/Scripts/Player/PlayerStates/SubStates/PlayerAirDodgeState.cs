@@ -31,8 +31,6 @@ public class PlayerAirDodgeState : PlayerAirborneAbilityState
             airDodgeDirection = airDodgeDirectionInput;
             airDodgeDirection.Normalize();
 
-            Debug.Log(airDodgeDirection);
-
             float angle = Vector2.SignedAngle(Vector2.right, airDodgeDirection);
 
             core.Movement.ApplyVelocity(playerData.runSpeed * playerData.airDodgeSpeed * airDodgeDirection);

@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerJumpSquatState : PlayerGroundedAbilityState
 {
     private float jumpSquatStartTime;
+    private float perfectWaveDashBuffer = 0.0333333f;
+
+    private bool airDodgeInput;
+
+    private bool airDodgeBuffered;
     private bool shouldShortHop;
     private bool inJumpSquat;
 
@@ -19,6 +24,7 @@ public class PlayerJumpSquatState : PlayerGroundedAbilityState
 
         jumpSquatStartTime = startTime;
         inJumpSquat = true;
+        airDodgeBuffered = false;
     }
 
     public override void Exit()
@@ -32,6 +38,15 @@ public class PlayerJumpSquatState : PlayerGroundedAbilityState
     {
         base.LogicUpdate();
         if (isExitingState) return;
+
+        airDodgeInput = player.InputHandler.AirDodgeInput;
+
+        player.Core.Movement.CheckIfShouldFlip(xInput);
+
+        if (airDodgeInput && jumpSquatStartTime + perfectWaveDashBuffer < Time.time && Time.time <= jumpSquatStartTime + playerData.jumpSquatTime) {
+            //Debug.Log(airDodgeBuffered);
+            airDodgeBuffered = true;
+        }
 
         if (Time.time >= jumpSquatStartTime + playerData.jumpSquatTime) {
             shouldShortHop = false;
@@ -49,5 +64,13 @@ public class PlayerJumpSquatState : PlayerGroundedAbilityState
 
     public bool CheckIfInJumpSquat() {
         return inJumpSquat;
+    }
+
+    public bool CheckIfAirDodgeBuffered() {
+        return airDodgeBuffered;
+    }
+
+    public void ResetAirDodgeBuffer() {
+        airDodgeBuffered = false;
     }
 }

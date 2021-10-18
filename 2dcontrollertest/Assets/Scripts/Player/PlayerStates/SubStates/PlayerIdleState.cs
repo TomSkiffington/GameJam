@@ -15,9 +15,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter() {
         base.Enter();
 
-        if (isTouchingWall || isTouchingWallBack) {
-                velocityX = 0;
-        }
+        //player.JumpSquatState.ResetAirDodgeBuffer();
         
         velocityX = core.Movement.CurrentVelocity.x;
     }
@@ -27,20 +25,20 @@ public class PlayerIdleState : PlayerGroundedState
 
         if (isExitingState) return;
 
+        if (isTouchingWall || isTouchingWallBack) {
+                velocityX = 0;
+        }
+
         if (xInput != 0 && isGrounded && !brokenLegs) {
             stateMachine.ChangeState(player.RunState);
         }
         else if (yInput == -1) {
             stateMachine.ChangeState(player.CrouchIdleState);
         }
-
-        
     }
 
     public override void PhysicsUpdate() {
         base.PhysicsUpdate();
-
-        
 
         core.Movement.reduceByTraction(ref velocityX, false);
         core.Movement.SetVelocityX(velocityX);

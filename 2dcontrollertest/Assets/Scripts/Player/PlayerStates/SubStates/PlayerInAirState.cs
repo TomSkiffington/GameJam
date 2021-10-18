@@ -44,9 +44,9 @@ public class PlayerInAirState : PlayerState
         isTouchingWallBack = core.CollisionSenses.CheckIfTouchingWallBack();
         isTouchingLedge = core.CollisionSenses.Ledge;
 
-        if (isTouchingWall && !isTouchingLedge) {
-            player.LedgeClimbState.SetDetectedPosition(player.transform.position);
-        }
+        // if (isTouchingWall && !isTouchingLedge) {
+        //     player.LedgeClimbState.SetDetectedPosition(player.transform.position);
+        // }
 
         if (!wallJumpCoyoteTime && !isTouchingWall && !isTouchingWallBack && (oldIsTouchingWall || oldIsTouchingWallBack)) {
             StartWallJumpCoyoteTime();
@@ -58,6 +58,8 @@ public class PlayerInAirState : PlayerState
         base.Enter();
 
         velocity.x = core.Movement.CurrentVelocity.x;
+
+        //player.Core.Movement.CheckIfShouldFlip(xInput);
     }
 
     public override void Exit()
@@ -83,6 +85,16 @@ public class PlayerInAirState : PlayerState
         jumpInputStop = player.InputHandler.JumpInputStop;
         wallGrabInput = player.InputHandler.WallGrabInput;
         airDodgeInput = player.InputHandler.AirDodgeInput;
+
+        if (isTouchingWall || isTouchingWallBack) {
+                velocity.x = 0;
+        }
+
+        if (player.JumpSquatState.CheckIfAirDodgeBuffered()) {
+            Debug.Log("buffered");
+            player.JumpSquatState.ResetAirDodgeBuffer();
+            stateMachine.ChangeState(player.AirDodgeState);
+        }
 
         if (isGrounded && core.Movement.CurrentVelocity.y < 0.01f) {
             stateMachine.ChangeState(player.LandState);
@@ -131,10 +143,6 @@ public class PlayerInAirState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
-        if (isTouchingWall || isTouchingWallBack) {
-                velocity.x = 0;
-        }
             
         core.Movement.airDrift(ref velocity.x, xInput);
         core.Movement.SetVelocityX(velocity.x);

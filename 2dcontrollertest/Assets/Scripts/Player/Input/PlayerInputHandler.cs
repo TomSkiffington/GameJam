@@ -125,7 +125,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
     private void CheckAirDodgeInputHoldTime() {
-        if (Time.time >= airDodgeInputStartTime + .15f)
+        if (Time.time >= airDodgeInputStartTime + .05f)
         {
             AirDodgeInput = false;
         }
