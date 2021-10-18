@@ -41,7 +41,7 @@ public void LogicUpdate() {
 
 public void PhysicsUpdate() {
 
-    if (!Controller.collisions.below || InputHandler.NormInputY < 0) {
+    if (!Controller.collisions.below || InputHandler.NormInputY < 0 || Controller.collisions.slopeAngle > 45) {
         velocityToApply.y -= playerData.gravity;   //should replace by using ApplyGravity function in states where needed... maybe
     }
 }

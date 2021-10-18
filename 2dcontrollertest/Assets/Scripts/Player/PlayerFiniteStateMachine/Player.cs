@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
         {
             //if (!debugMode) return;
             string state = StateMachine.CurrentState.ToString();
-            GUI.Label(new Rect(0, 0, 1000, 100), state);
+            string playerVel = Core.Movement.CurrentVelocity.ToString();
+            GUI.Label(new Rect(0, 0, 1000, 100), state + " " + playerVel);
         }
     #endif
 

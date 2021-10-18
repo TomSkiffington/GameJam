@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Controller2D : RayCastController {
 
-    float maxClimbAngle = 65;
-    float maxDescendAngle = 70;
+    float maxClimbAngle = 45;
+    float maxDescendAngle = 45;
 
     public CollisionInfo collisions;
     Vector2 playerInput;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 12
   walkSpeed: 6
-  traction: 0.4
+  traction: 0.15
   turnAroundMomentumModifier: 0.8
   iniDashSpeed: 12
   maxDashSpeed: 14
@@ -25,8 +25,8 @@ MonoBehaviour:
   crouchColliderHeight: 0.8
   standColliderHeight: 1.6
   jumpSquatTime: 0.083333336
-  fullHopIniV: 24
-  shortHopIniV: 17
+  fullHopIniV: 20
+  shortHopIniV: 15
   amountOfJumps: 1
   wallJumpTime: 0.15
   wallJumpVelocity: 22
@@ -39,8 +39,8 @@ MonoBehaviour:
   fastFallV: 13
   gravity: 1.1
   airDodgeTime: 0.35
-  airDodgeSpeed: 2
-  airDodgeDistanceModifier: 0.94
+  airDodgeSpeed: 1.7
+  airDodgeDistanceModifier: 0.9
   wallSlideVelocity: 3
   wallClimbVelocity: 3
   startOffset: {x: 0.37, y: 0.95}

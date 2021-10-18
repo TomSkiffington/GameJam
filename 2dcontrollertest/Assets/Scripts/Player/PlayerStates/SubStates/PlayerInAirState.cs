@@ -97,15 +97,15 @@ public class PlayerInAirState : PlayerState
                 velocity.x = 0;
         }
         else if (jumpInput && (isTouchingWall || wallJumpCoyoteTime)) {
-            StopWallJumpCoyoteTime();
-            isTouchingWall = core.CollisionSenses.CheckIfTouchingWall();
-            player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
-            stateMachine.ChangeState(player.WallJumpState);
+            //StopWallJumpCoyoteTime();
+            //isTouchingWall = core.CollisionSenses.CheckIfTouchingWall();
+            //player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
+            //stateMachine.ChangeState(player.WallJumpState);
         }
         else if (jumpInput && player.JumpState.CanJump() && !isJumping) {
-            coyoteTime = false;
-            player.JumpState.DecreaseAmountOfJumpsLeft();
-            stateMachine.ChangeState(player.JumpState);
+            //coyoteTime = false;
+            //player.JumpState.DecreaseAmountOfJumpsLeft();
+            //stateMachine.ChangeState(player.JumpState);
         }
         else if (wallGrabInput && isTouchingWall && xInput == core.Movement.FacingDirection && isTouchingLedge) {
             //stateMachine.ChangeState(player.WallGrabState);
