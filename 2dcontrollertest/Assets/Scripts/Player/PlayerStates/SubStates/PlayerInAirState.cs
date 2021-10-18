@@ -131,6 +131,10 @@ public class PlayerInAirState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        if (isTouchingWall) {
+                velocity.x = 0;
+        }
             
         core.Movement.airDrift(ref velocity.x, xInput);
         core.Movement.SetVelocityX(velocity.x);

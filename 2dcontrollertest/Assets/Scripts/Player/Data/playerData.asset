@@ -32,9 +32,9 @@ MonoBehaviour:
   wallJumpVelocity: 22
   wallJumpAngle: {x: 1, y: 2}
   aerialMaxVelX: 5
-  airFriction: 0.02
-  airMobilityA: 0.15
-  airMobilityB: 0.1
+  airFriction: 0.12
+  airMobilityA: 0.03
+  airMobilityB: 0.07
   coyoteTime: 0.2
   fastFallV: 13
   gravity: 1.1

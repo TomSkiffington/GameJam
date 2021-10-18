@@ -15,7 +15,7 @@ public class PlayerGroundedState : PlayerState
 
     // Checks
     protected bool isGrounded;
-    private bool isTouchingWall;
+    protected bool isTouchingWall;
     private bool wallGrabInput;
     private bool isTouchingLedge;
     protected bool isTouchingCeiling;

@@ -30,7 +30,7 @@ public class PlayerSpecialLandState : PlayerGroundedState
         base.Exit();
 
         if (cancelledAnim) {
-            speedMulti += .2f;
+            speedMulti += .1f;
         }
 
         //playerData.traction = .8f;
@@ -41,14 +41,14 @@ public class PlayerSpecialLandState : PlayerGroundedState
         base.LogicUpdate();
         if (isExitingState) return;
 
-        if (xInput != 0 && Time.time >= startTime + landTime && !brokenLegs) {
-            //player.CheckIfShouldFlip();
-            //core.Movement.SetVelocityZero();
-            stateMachine.ChangeState(player.RunState);
+        if (Time.time == startTime + landTime) {
+            cancelledAnim = true;
+            stateMachine.ChangeState(player.IdleState);
         }
         else if (isAnimationFinished) {
 
             cancelledAnim = false;
+            speedMulti = 1;
 
             stateMachine.ChangeState(player.IdleState);
         }
@@ -57,6 +57,10 @@ public class PlayerSpecialLandState : PlayerGroundedState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        if (isTouchingWall) {
+                velocityX = 0;
+        }
 
         core.Movement.reduceByTraction(ref velocityX, false);
         core.Movement.SetVelocityX(velocityX);

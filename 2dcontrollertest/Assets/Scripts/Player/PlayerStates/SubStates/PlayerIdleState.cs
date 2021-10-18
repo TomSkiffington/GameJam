@@ -15,7 +15,9 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter() {
         base.Enter();
 
-        
+        if (isTouchingWall) {
+                velocityX = 0;
+        }
         
         velocityX = core.Movement.CurrentVelocity.x;
     }
@@ -38,7 +40,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void PhysicsUpdate() {
         base.PhysicsUpdate();
 
-
+        
 
         core.Movement.reduceByTraction(ref velocityX, false);
         core.Movement.SetVelocityX(velocityX);
