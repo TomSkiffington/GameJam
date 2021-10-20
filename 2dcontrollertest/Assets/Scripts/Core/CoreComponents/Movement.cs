@@ -31,18 +31,30 @@ protected override void Awake() {
 public void LogicUpdate() {
 
     CurrentVelocity = velocityToApply;
+
+    if (velocityToApply.y < -85) {
+        velocityToApply.y = -85;
+    }
     
     ApplyVelocity(velocityToApply);
 
-    if (Controller.collisions.above || Controller.collisions.below) {
+    if (Controller.collisions.above || Controller.collisions.below && !Controller.collisions.slidingDownMaxSlope) {
+
         velocityToApply.y = 0;
     }
 }
 
 public void PhysicsUpdate() {
 
-    if (!Controller.collisions.below || InputHandler.NormInputY < 0 || Controller.collisions.slopeAngle > 45) {
+    Debug.Log(Controller.collisions.slopeAngle + " Sliding Down Max Slope: " + Controller.collisions.slidingDownMaxSlope);
+
+    
+
+    if (!Controller.collisions.below || InputHandler.NormInputY < 0) {
         velocityToApply.y -= playerData.gravity;   //should replace by using ApplyGravity function in states where needed... maybe
+    }
+    else if (Controller.collisions.slidingDownMaxSlope) {
+        velocityToApply.y -= Controller.collisions.slopeNormal.y * playerData.gravity * .5f;
     }
 }
 
@@ -88,6 +100,7 @@ public void PhysicsUpdate() {
     } */
 
     public void reduceByTraction(ref float velocityX, bool applyDouble) {
+
         if (velocityX > 0) {
             if (applyDouble && velocityX > playerData.crouchWalkSpeed) {
                 velocityX -= playerData.traction * 2;
