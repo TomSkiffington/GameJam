@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 12
   walkSpeed: 6
-  traction: 0.15
+  traction: 0
   turnAroundMomentumModifier: 0.8
   iniDashSpeed: 12
   maxDashSpeed: 14
