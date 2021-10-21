@@ -264,8 +264,13 @@ BoxCollider2D:
     border: {x: 0.4375, y: 0.4375, z: 0.375, w: 0.3125}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3, y: 3}
+<<<<<<< HEAD
     newSize: {x: 1.783077, y: 7.132283}
     adaptiveTilingThreshold: 0.5
+=======
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0
+>>>>>>> 53a8cd97a8b1b2baa8dfa4cb5debbcf23bae0805
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -13603,6 +13608,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1998499931}
   m_LocalRotation: {x: -0, y: -0, z: -0.7047953, w: 0.7094107}
   m_LocalPosition: {x: -14, y: 31.18, z: 0}
@@ -13612,6 +13618,17 @@ Transform:
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.626}
 --- !u!50 &1998499933
+=======
+  m_GameObject: {fileID: 1767623463}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 16.9, y: 9.22, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 290975914}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!50 &1767623465
+>>>>>>> 53a8cd97a8b1b2baa8dfa4cb5debbcf23bae0805
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -13674,13 +13691,22 @@ BoxCollider2D:
     border: {x: 0.4375, y: 0.4375, z: 0.375, w: 0.3125}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3, y: 3}
+<<<<<<< HEAD
     newSize: {x: 1.783077, y: 1.705508}
     adaptiveTilingThreshold: 0.5
+=======
+    newSize: {x: 1.783077, y: 99.41124}
+    adaptiveTilingThreshold: 0.072
+>>>>>>> 53a8cd97a8b1b2baa8dfa4cb5debbcf23bae0805
     drawMode: 2
-    adaptiveTiling: 0
+    adaptiveTiling: 1
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1.783077, y: 1.705508}
+=======
+  m_Size: {x: 1.783077, y: 99.41124}
+>>>>>>> 53a8cd97a8b1b2baa8dfa4cb5debbcf23bae0805
   m_EdgeRadius: 0
 --- !u!212 &1998499936
 SpriteRenderer:
@@ -13727,9 +13753,15 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
+<<<<<<< HEAD
   m_Size: {x: 1.783077, y: 1.705508}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+=======
+  m_Size: {x: 1.783077, y: 99.41124}
+  m_AdaptiveModeThreshold: 0.072
+  m_SpriteTileMode: 1
+>>>>>>> 53a8cd97a8b1b2baa8dfa4cb5debbcf23bae0805
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1

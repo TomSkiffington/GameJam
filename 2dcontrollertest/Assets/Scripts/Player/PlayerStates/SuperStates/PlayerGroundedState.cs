@@ -58,7 +58,7 @@ public class PlayerGroundedState : PlayerState
         walkInput = player.InputHandler.WalkInput;
         walkInputStopHold = player.InputHandler.WalkInputStop;
 
-        if (jumpInput && player.JumpState.CanJump() && !isTouchingCeiling) {
+        if (jumpInput && player.JumpState.CanJump() && !isTouchingCeiling && !player.controller.collisions.slidingDownMaxSlope) {
             stateMachine.ChangeState(player.JumpSquatState);
         }
         else if (!isGrounded) {

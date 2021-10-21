@@ -86,7 +86,7 @@ public class PlayerInAirState : PlayerState
         wallGrabInput = player.InputHandler.WallGrabInput;
         airDodgeInput = player.InputHandler.AirDodgeInput;
 
-        if (isTouchingWall || isTouchingWallBack) {
+        if (isTouchingWall || isTouchingWallBack && !player.controller.collisions.descendingSlope) {
                 velocity.x = 0;
         }
 
