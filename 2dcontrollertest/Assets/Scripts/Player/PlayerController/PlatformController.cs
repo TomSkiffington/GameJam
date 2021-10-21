@@ -68,6 +68,7 @@ public class PlatformController : RayCastController
         }
 
         //horzontal moving platform push player
+       
         if (velocity.x !=0) {
             float rayLength = Mathf.Abs(velocity.x) + skinWidth;
 
@@ -123,4 +124,16 @@ public class PlatformController : RayCastController
             moveBeforePlatform = _moveBeforePlatform;
         }
     }
+     void OnTriggerEnter(Collider other){
+         if (other.gameObject.tag == "Slippery") {
+             GetComponent<Collider>().material.dynamicFriction = 0;
+         }
+     }
+ 
+     void OnTriggerExit(Collider other){
+         if (other.gameObject.tag == "Slippery") {
+             GetComponent<Collider>().material.dynamicFriction = 1;
+             
+         }
+     }
 }
