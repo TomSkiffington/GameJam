@@ -32,8 +32,8 @@ public void LogicUpdate() {
 
     CurrentVelocity = velocityToApply;
 
-    if (velocityToApply.y < -85) {
-        velocityToApply.y = -85;
+    if (velocityToApply.y < -75) {
+        velocityToApply.y = -75;
     }
     
     ApplyVelocity(velocityToApply);
@@ -50,7 +50,7 @@ public void PhysicsUpdate() {
 
     
 
-    if (!Controller.collisions.below || InputHandler.NormInputY < 0) {
+    if (!Controller.collisions.below) {
         velocityToApply.y -= playerData.gravity;   //should replace by using ApplyGravity function in states where needed... maybe
     }
     else if (Controller.collisions.slidingDownMaxSlope) {

@@ -22,6 +22,7 @@ public class CollisionSenses : CoreComponent
     [SerializeField] private Transform ceilingCheck;
 
     [SerializeField] private float groundCheckRadius;
+    [SerializeField] private Vector2 groundCheckSize;
     [SerializeField] private float wallCheckDistance;
 
     [SerializeField] private LayerMask collisionMask;
@@ -31,11 +32,12 @@ public class CollisionSenses : CoreComponent
     #region  Check Functions
 
     public bool Grounded {
-        get => Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionMask);
+        //get => Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionMask);
+        get => Physics2D.OverlapCapsule(groundCheck.position, groundCheckSize, CapsuleDirection2D.Horizontal, 0, collisionMask);
     }
 
     public bool Ceiling {
-        get => Physics2D.OverlapCircle(ceilingCheck.position, groundCheckRadius, collisionMask);
+        get => Physics2D.OverlapCircle(ceilingCheck.position, .25f, collisionMask);
     }
 
     public bool Ledge {

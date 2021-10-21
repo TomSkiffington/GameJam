@@ -17,6 +17,7 @@ public class PlayerInAirState : PlayerState
     //Checks
     private bool fastFalled;
     private bool isGrounded;
+    //private bool isGroundedRaycast;
     private bool isTouchingWall;
     private bool oldIsTouchingWall; //touched wall in previous frame
     private bool isTouchingWallBack;
@@ -40,6 +41,7 @@ public class PlayerInAirState : PlayerState
         oldIsTouchingWallBack = isTouchingWallBack;
 
         isGrounded = core.CollisionSenses.Grounded;
+        //isGroundedRaycast = player.controller.collisions.below;
         isTouchingWall = core.CollisionSenses.CheckIfTouchingWall();
         isTouchingWallBack = core.CollisionSenses.CheckIfTouchingWallBack();
         isTouchingLedge = core.CollisionSenses.Ledge;
