@@ -46,7 +46,7 @@ public void LogicUpdate() {
 
 public void PhysicsUpdate() {
 
-    Debug.Log(Controller.collisions.slopeAngle + " Sliding Down Max Slope: " + Controller.collisions.slidingDownMaxSlope);
+    //Debug.Log(Controller.collisions.slopeAngle + " Sliding Down Max Slope: " + Controller.collisions.slidingDownMaxSlope);
 
     
 
@@ -54,7 +54,7 @@ public void PhysicsUpdate() {
         velocityToApply.y -= playerData.gravity;   //should replace by using ApplyGravity function in states where needed... maybe
     }
     else if (Controller.collisions.slidingDownMaxSlope) {
-        velocityToApply.y -= Controller.collisions.slopeNormal.y * playerData.gravity * .5f;
+        velocityToApply.y -= Controller.collisions.slopeNormal.y * playerData.gravity * .25f;
     }
 }
 
