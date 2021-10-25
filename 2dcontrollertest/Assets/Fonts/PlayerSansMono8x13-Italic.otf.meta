@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: be7a6026965286849b8ed7a0c09d9bb9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Player Sans Mono 8x13
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 125982de4fa4a4448bd3ba08e1db3423, type: 3}
+  - {fileID: 12800000, guid: 3ef42c2a4bee5cf4a8f9f3a8b3f6059b, type: 3}
+  - {fileID: 12800000, guid: 85476ad2e9b4d6548b956c35a5bedf9c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
