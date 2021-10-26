@@ -33,7 +33,7 @@ public class PlayerIdleState : PlayerGroundedState
             stateMachine.ChangeState(player.RunState);
         }
         else if (yInput == -1) {
-            stateMachine.ChangeState(player.CrouchIdleState);
+            //stateMachine.ChangeState(player.CrouchIdleState);
         }
     }
 

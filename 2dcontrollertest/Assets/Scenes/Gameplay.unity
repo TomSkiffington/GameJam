@@ -4980,7 +4980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208170241}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.90659, y: 380.82507, z: 541.4168}
+  m_LocalPosition: {x: -18.24659, y: 381.07507, z: 541.4168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1111448101}
@@ -5184,7 +5184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.646126, y: 371.16534, z: 541.4168}
+  m_LocalPosition: {x: -16.09462, y: 370.7167, z: 541.4168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2003850650}
@@ -5296,6 +5296,7 @@ GameObject:
   - component: {fileID: 724289406}
   - component: {fileID: 724289405}
   - component: {fileID: 724289411}
+  - component: {fileID: 724289410}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -5450,7 +5451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724289401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 380.4, z: 0}
+  m_LocalPosition: {x: -21.34, y: 380.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1460245224}
@@ -5593,6 +5594,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.623, y: 1.65}
   m_EdgeRadius: 0
+--- !u!114 &724289410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724289401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e838cfa49f5f94aa3b6ab5b3b9ab81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 724289401}
 --- !u!50 &724289411
 Rigidbody2D:
   serializedVersion: 4
@@ -5942,10 +5956,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 53.8, y: -7.351532}
       - {x: -19.5, y: -7.2630043}
-      - {x: -19.5, y: -24.643093}
-      - {x: -19.5, y: -381.82126}
-      - {x: 28.736465, y: -381.84424}
-      - {x: 28.77507, y: -385.56186}
+      - {x: -19.5, y: -385.6034}
       - {x: 53.8, y: -385.60342}
 --- !u!4 &1549722181
 Transform:

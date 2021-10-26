@@ -12,16 +12,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 98c57a77567a98648b89890da8114d0f
   - enabled: 1
-    path: Assets/Scenes/intro.unity
+    path: Assets/Scenes/Intro.unity
     guid: b30baa723391b1141afd4cb0962ff548
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: e4ec5d078d3ccb449bfd7a98e2fc823e
   - enabled: 1
-    path: Assets/Scenes/hell.unity
+    path: Assets/Scenes/Hell.unity
     guid: 54619536cef70a74ab4341be5476b243
   - enabled: 1
-    path: Assets/Scenes/jungle.unity
+    path: Assets/Scenes/Jungle.unity
     guid: 7e27c425509d0c5408528ada21a04b98
   - enabled: 1
     path: Assets/Scenes/Crystal_Cave.unity
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mush_cave.unity
     guid: cda1694be4976fc4e8ab858e39e99520
+  - enabled: 1
+    path: Assets/Scenes/Outro.unity
+    guid: fbc7276c628ec1942a7e0ffdf1533e20
   m_configObjects: {}
